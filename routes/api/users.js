@@ -1,19 +1,13 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
-router
-  .route("/")
+router.route("/")
   .post(userController.create)
+  .get(userController.findAll)
 
-router
-  .route("/:id")
+router.route("/:id")
   .get(userController.findById)
-  .post(userController.update)
+  .put(userController.update)
   .delete(userController.remove)
-
-router
-  .route("/admin")
-  .get(userController.findAll);
-
 
 module.exports = router;

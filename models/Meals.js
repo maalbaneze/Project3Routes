@@ -1,15 +1,21 @@
-import mongoose, { Schema } from 'mongoose';
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+// import mongoose, { Schema } from 'mongoose';
 
 // Define meal schema
-var MealSchema = new Schema({
+let MealSchema = new Schema({
     meal: String,
     name: {
         type: String,
-        unique: true,
     },
     mealDesc: String,
-    carbCount: Int,
+    carbCount: {
+        type: Number,
+        min: 0,
+        max: 300
+    },
 });
 
 // Export Mongoose model
-export default mongoose.model('meal', MealSchema);
+module.exports = mongoose.model('Meal', MealSchema);

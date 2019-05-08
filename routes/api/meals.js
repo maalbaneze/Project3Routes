@@ -5,10 +5,9 @@ router.route("/")
   .get(mealController.findAll)
   .post(mealController.create);
 
-router
-  .route("/:id")
+router.route("/:id")
   .get(mealController.findById)
-  .post(mealController.update)
+  .put(mealController.update)
   .delete(mealController.remove);
 
 module.exports = router;
