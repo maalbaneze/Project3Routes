@@ -25,9 +25,9 @@ if (process.env.NODE_ENV === "production") {
 }
 //Tells our app to use the routes we have in routes folder
 app.use(routes);
-// Connect to the mongoose server on our computer in a database named "Project3Test"
+// Connect to the mongoose server on Heroku, db name below
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/Project3Test",
+    process.env.MONGODB_URI || "mongodb://adminMAA:UWcbc2019@ds153566.mlab.com:53566/heroku_k9zhv6dj",
     {
         useCreateIndex: true,
         useNewUrlParser: true
