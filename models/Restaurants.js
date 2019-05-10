@@ -26,7 +26,7 @@ let RestaurantSchema = new Schema({
             },
             message: props => `${props.value} is not a valid postal code`
         },
-        required: [false, 'Postal code required']
+        // required: [false, 'Postal code required']
     },
     // meals: [{
     //     type: Schema.Types.ObjectId, ref: 'Meal'
