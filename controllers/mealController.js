@@ -13,12 +13,12 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     create: function (req, res) {
-        db.Meal.create(req.query)
+        db.Meal.create(req.body)
             .then(dbMeal => res.json(dbMeal))
             .catch(err => res.status(422).json(err));
     },
     update: function (req, res) {
-        db.Meal.findOneAndUpdate({ _id: req.params.id }, req.query)
+        db.Meal.findOneAndUpdate({ _id: req.params.id }, req.body)
             .then(dbMeal => res.json(dbMeal))
             .catch(err => res.status(422).json(err));
     },

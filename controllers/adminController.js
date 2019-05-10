@@ -13,7 +13,7 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     create: function (req, res) {
-        db.User.create(req.query)
+        db.User.create(req.body)
             .then(dbUser => res.json(dbUser))
             .catch(err => res.status(422).json(err));
     },
@@ -39,7 +39,7 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     create: function (req, res) {
-        db.Restaurant.create(req.query)
+        db.Restaurant.create(req.body)
             .then(dbRestaurant => res.json(dbRestaurant))
             .catch(err => res.status(422).json(err));
     },
@@ -65,7 +65,7 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     create: function (req, res) {
-        db.Meal.create(req.query)
+        db.Meal.create(req.body)
             .then(dbMeal => res.json(dbMeal))
             .catch(err => res.status(422).json(err));
     },

@@ -13,13 +13,13 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     create: function (req, res) {
-        db.Restaurant.create(req.query)
-        console.log(req.query)
+        console.log(req.body)
+        db.Restaurant.create(req.body)
             .then(dbRestaurant => res.json(dbRestaurant))
             .catch(err => res.status(422).json(err));
     },
     update: function (req, res) {
-        db.Restaurant.findOneAndUpdate({ _id: req.params.id }, req.query)
+        db.Restaurant.findOneAndUpdate({ _id: req.params.id }, req.body)
             .then(dbRestaurant => res.json(dbRestaurant))
             .catch(err => res.status(422).json(err));
     },
