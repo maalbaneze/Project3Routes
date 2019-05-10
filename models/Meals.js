@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 // Define meal schema
 let MealSchema = new Schema({
     meal: String,
-    name: {
+    mealName: {
         type: String,
     },
     mealDesc: String,
