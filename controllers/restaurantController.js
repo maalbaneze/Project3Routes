@@ -14,6 +14,7 @@ module.exports = {
     },
     create: function (req, res) {
         db.Restaurant.create(req.query)
+        console.log(req.query)
             .then(dbRestaurant => res.json(dbRestaurant))
             .catch(err => res.status(422).json(err));
     },
